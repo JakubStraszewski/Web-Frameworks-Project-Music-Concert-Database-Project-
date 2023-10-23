@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const methods = {
 	initializeDatabase : function() {
-		const uri = "mongodb+srv://user187:js12345@cluster0.lxbjfoq.mongodb.net/loc8r?retryWrites=true&w=majority";
+		const uri = "mongodb+srv://user187:js12345@cluster0.lxbjfoq.mongodb.net/MusicalConcertDatabase?retryWrites=true&w=majority";
 		let conStatus = false;
 		try {
 			mongoose.connect(uri);
@@ -14,7 +14,7 @@ const methods = {
 	},
 	createObject: function(blueprint) {
 			const out = mongoose.Schema(blueprint);
-			return mongoose.model("towns", out);
+			return mongoose.model("data", out);
 	},
 	persistObject: function(model) {
 		model.save();

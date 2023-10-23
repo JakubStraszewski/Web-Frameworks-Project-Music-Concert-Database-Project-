@@ -7,7 +7,17 @@ var logger = require('morgan');
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
+var databaseAPI = require('./app_server/components/database');
+
 var app = express();
+
+databaseAPI.initializeDatabase();
+const user = databaseAPI.createObject( {
+	name: String,
+	surname: String,
+} );
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server/views'));
