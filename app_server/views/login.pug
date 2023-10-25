@@ -3,14 +3,14 @@ extends layout
 block content
 	h1.textFill Music Concert Database - Login
 	.textFill
-		form(action="http://localhost:3000" method="GET")
+		form(action="http://localhost:3000" method="POST")
 			br
-			label(for="fn") Name
-			input(type="text" name="forename" id="fn")
-			br 
+			label(for="ln") Name
+			input(type="text" name="login_name" id="ln")
 			br
-			label(for="sn") Surname
-			input(type="text" name="surname" id="sn")
+			br
+			label(for="pswrd") Password
+			input(type="password" name="login_password" id="pswrd")
 			br
 			br
 			input(type="submit" value="Login")

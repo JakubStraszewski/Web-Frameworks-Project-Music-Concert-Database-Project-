@@ -1,11 +1,14 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const regController = require('../controllers/registration');
 const loginController = require('../controllers/login');
 const tlController = require('../controllers/topLevel');
 
 
-/* GET home page. */
+router.get('/register', regController.routeDisplay);
 router.get('/login', loginController.routeDisplay);
 router.get('/', tlController.routeDisplay);
+
+router.post('/', tlController.routeDisplay);
 
 module.exports = router;
