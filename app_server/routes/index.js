@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const controller = require('../controllers/controller_test');
+const loginController = require('../controllers/login');
+const tlController = require('../controllers/topLevel');
 
 
 /* GET home page. */
-router.get('/', controller.topLevel);
-router.get('/db', controller.db);
+router.get('/login', loginController.routeDisplay);
+router.get('/', tlController.routeDisplay);
 
 module.exports = router;

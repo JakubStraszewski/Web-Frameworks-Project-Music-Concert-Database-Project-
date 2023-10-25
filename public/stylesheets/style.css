@@ -1,8 +1,15 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	background-image: url("https://cdn.britannica.com/90/145590-050-3F4C6402/String-section-Jalisco-Philharmonic-Orchestra-Mexico-Guadalajara.jpg");
 }
 
-a {
-  color: #00B7FF;
+.textFill{
+	background-color: rgba(255, 255, 255, 0.75);
+	text-align: center;
+	padding: 1.0em;
+}
+
+.funkyErrorMessage {
+	color: white;
+	background-color: rgba(255, 0.0, 0.0, 0.75);
+	font-family: "Segoe Script";
 }
