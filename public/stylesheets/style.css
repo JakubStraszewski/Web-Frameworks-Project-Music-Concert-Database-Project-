@@ -1,5 +1,7 @@
 body {
-	background-image: url("https://cdn.britannica.com/90/145590-050-3F4C6402/String-section-Jalisco-Philharmonic-Orchestra-Mexico-Guadalajara.jpg");
+	background-color: #7f3f00;
+	background-image: url("../images/opera-594592_1280.jpg");
+	background-repeat: no-repeat;
 }
 
 .textFill{

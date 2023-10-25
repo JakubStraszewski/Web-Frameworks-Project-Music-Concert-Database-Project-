@@ -7,8 +7,6 @@ const tlController = require('../controllers/topLevel');
 
 router.get('/register', regController.routeDisplay);
 router.get('/login', loginController.routeDisplay);
-router.get('/', tlController.routeDisplay);
-
 router.post('/', tlController.routeDisplay);
 
 module.exports = router;

@@ -11,20 +11,18 @@ async function retrieveAndDisplay(req, res, next) {
 	const result = await databaseAPI.retrieveObjectArray(potentialObject, "user");
 	console.log(result.length);
 	if (req_login) {
-		if (result.length > 0) {	
-			let auth = false;
-			for (let i = 0; i < result.length; i++) {
-				if (req_password == result[i].password) {
-					auth = true;
-					break;
-				}
+		let auth = false;
+		for (let i = 0; i < result.length; i++) {
+			if (req_password == result[i].password) {
+				auth = true;
+				break;
 			}
-			if (!auth) {
-				res.render('error', { message: "Failed to authenticate user.", error: { status: "Invalid password for username.", stack: "Please review the input and try again." } } );
-			}
-			else {
-				res.render('mainpage', { user: `${req_name}`} );
-			}
+		}
+		if (!auth) {
+			res.render('error', { message: "Failed to authenticate user.", error: { status: "Invalid username or password.", stack: "Please review the input and try again." } } );
+		}
+		else {
+			res.render('mainpage', { user: `${req_name}`} );
 		}
 	}
 	else
