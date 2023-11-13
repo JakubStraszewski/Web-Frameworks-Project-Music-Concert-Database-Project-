@@ -8,6 +8,7 @@ var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
 
 var databaseAPI = require('./app_server/components/database');
+var concerts = require("./app_server/components/concerts");
 
 var app = express();
 
@@ -17,6 +18,14 @@ const user = databaseAPI.createObject( {
 	password: String,
 }, "users", "user");
 
+const concert = databaseAPI.createObject( {
+	title: String,
+	date: String,
+	price: Number,
+}, "concerts", "concert");
+
+concerts.addConcert("Winter Polyphony Feast", "12th of December, 2023", 49.99);
+concerts.addConcert("Christmas Musical Festival", "22th of December, 2023", 19.99);
 
 
 // view engine setup
